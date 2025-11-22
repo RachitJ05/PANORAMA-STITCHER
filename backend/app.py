@@ -25,7 +25,6 @@ def home():
             "download": "/download"
         }
     })
-gitcd
 
 @app.route('/ping')
 def ping():
