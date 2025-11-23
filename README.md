@@ -1,3 +1,9 @@
+<image src = /screenshots/image.png>
+
+🚀 Live Demo: https://panorama-stitcher.vercel.app/
+
+🖼 Backend API: https://panorama-stitcher.onrender.com/
+
 # 🌄 Panorama Stitcher  
 A full-stack React + Flask application that stitches multiple images into a panoramic output using OpenCV.  
 The system performs automatic geometric cropping to extract the largest valid rectangular region.
@@ -60,8 +66,6 @@ cd frontend
 npm install
 npm run dev
 ```
-
-<image src = /screenshots/image.png>
 
 
 ## 📦 Deployment
