@@ -52,7 +52,7 @@ def stitch_route():
         # stitch_images returns dict with keys: stitched, cropped, overlay, contour, mask
         result = stitch_images(saved_paths, out_dir=app.config['UPLOAD_FOLDER'])
     except Exception as e:
-        return jsonify({'error': 'Images could not be stitched!\nLikely not enough keypoints being detected!', 'message': str(e)}), 500
+        return jsonify({'error': 'Stitching failed', 'message': str(e)}), 500
 
     return jsonify(result)
 

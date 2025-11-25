@@ -31,7 +31,7 @@ export default function App() {
       setResult(res.data)
     } catch (err) {
       console.error(err)
-      setError('Stitching failed. Please try again.')
+      setError('Images could not be stitched!\nLikely not enough keypoints being detected!')
     }
 
     setLoading(false)
