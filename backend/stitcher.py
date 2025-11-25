@@ -93,26 +93,14 @@ def stitch_images(image_paths, out_dir='uploads'):
     if status != cv2.STITCHER_OK and status != 0:
         raise RuntimeError(f"Stitcher failed with status {status}")
 
-    stitched_name = os.path.join(out_dir, 'stitched.png')
-    cv2.imwrite(stitched_name, stitched)
 
     # run geometric crop
-    cropped, minRect, overlay, mask, contour_overlay = geometric_crop_with_visuals(stitched)
+    cropped = geometric_crop_with_visuals(stitched)
 
     cropped_name = os.path.join(out_dir, 'Stitched_Image.png')
-    overlay_name = os.path.join(out_dir, 'overlay.png')
-    contour_name = os.path.join(out_dir, 'contour.png')
-    mask_name = os.path.join(out_dir, 'mask.png')
 
     cv2.imwrite(cropped_name, cropped)
-    cv2.imwrite(overlay_name, overlay)
-    cv2.imwrite(contour_name, contour_overlay)
-    cv2.imwrite(mask_name, mask)
 
     return {
-        'stitched': stitched_name,
         'cropped': cropped_name,
-        'overlay': overlay_name,
-        'contour': contour_name,
-        'mask': mask_name
     }
